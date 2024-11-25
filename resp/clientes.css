@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .clientes-section h2 {
+        font-size: 1.8rem;
+    }
+  
+    .clientes-section p {
+        font-size: 0.9rem;
+    }
+  
+    .cliente-item {
+        width: 150px;
+        height: 120px;
+    }
+  }

@@ -1,0 +1,51 @@
+@media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .logo {
+      margin-bottom: 20px;
+    }
+  
+    .nav-links {
+      display: none;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .buttons {
+      display: none;
+    }
+  
+    .content h1 {
+      font-size: 24px;
+    }
+  
+    .content p {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .btn-contato {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+    }
+  
+    .content h3 {
+      font-size: 18px;
+    }
+  
+    .content h1 {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  
+    .content p {
+      font-size: 12px;
+    }
+  }
