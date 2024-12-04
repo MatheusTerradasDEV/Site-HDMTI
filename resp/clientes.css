@@ -1,14 +1,28 @@
-@media (max-width: 768px) {
-    .clientes-section h2 {
-        font-size: 1.8rem;
+/* Computador */
+@media (min-width: 768px) {
+    .carousel-item {
+        min-width: 25%;
     }
+
+    
+}
   
-    .clientes-section p {
-        font-size: 0.9rem;
+  /* Mobile*/
+  @media (max-width: 767px) {
+    .carousel-item {
+        min-width: 100%;
     }
-  
-    .cliente-item {
-        width: 150px;
-        height: 120px;
-    }
+    .carousel-section h2{
+        font-size: 30px;
+        }
+
+        .carousel-section p{
+            font-size: 12px;
+            width: 70%;
+        }
+
+        .carousel-item img{
+            width: 300px;
+        }
+
   }

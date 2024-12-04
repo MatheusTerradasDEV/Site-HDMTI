@@ -1,75 +1,32 @@
-const carousel = document.querySelector('.clientes-carousel');
-const leftArrow = document.querySelector('.seta-esquerda');
-const rightArrow = document.querySelector('.seta-direita');
-let scrollInterval;
+const carousel = document.getElementById('carousel');
+const totalItems = document.querySelectorAll('.carousel-item').length;
+let currentIndex = 0;
 
-
-function scrollLeft() {
-  carousel.scrollLeft -= 10;
+// Define quantos itens mostrar por vez, dependendo do tamanho da tela
+function getItemsToShow() {
+    return window.innerWidth >= 768 ? 4 : 1;
 }
 
-
-function scrollRight() {
-  carousel.scrollLeft += 10;
+function updateCarousel() {
+    const itemsToShow = getItemsToShow();
+    const offset = currentIndex * -100 / itemsToShow;
+    carousel.style.transform = `translateX(${offset}%)`;
 }
 
+function nextSlide() {
+    const itemsToShow = getItemsToShow();
+    const maxIndex = Math.ceil(totalItems / itemsToShow) - 1;
+    
+    currentIndex += itemsToShow; // Avançar de acordo com o número de itens visíveis
+    
+    if (currentIndex / itemsToShow > maxIndex) {
+        currentIndex = 0; // Volta ao início se ultrapassar o total de itens
+    }
+    updateCarousel();
+}
 
-leftArrow.addEventListener('mouseenter', () => {
-  scrollInterval = setInterval(scrollLeft, 10);
-});
+// Avançar automaticamente a cada 4 segundos
+setInterval(nextSlide, 4000); // Intervalo mais lento (4s)
 
-rightArrow.addEventListener('mouseenter', () => {
-  scrollInterval = setInterval(scrollRight, 10);
-});
-
-
-leftArrow.addEventListener('mouseleave', () => {
-  clearInterval(scrollInterval);
-});
-
-rightArrow.addEventListener('mouseleave', () => {
-  clearInterval(scrollInterval);
-});
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  const observerOptions = {
-      threshold: 0.2 // 20% do elemento deve estar visível para disparar
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add('animate');
-          }
-      });
-  }, observerOptions);
-
-  // Seleciona elementos que terão animação
-  const elementsToAnimate = document.querySelectorAll('.section-title, .section-description, .service-item, .service-item-content');
-  elementsToAnimate.forEach(element => observer.observe(element));
-});
-
-
-
-
-
-
-
-
-
-// script.js
-window.onscroll = function() {
-  var header = document.querySelector(".header");
-  if (window.scrollY > 50) {  // Quando a rolagem for maior que 50px
-      header.classList.add("transparent");
-  } else {
-      header.classList.remove("transparent");
-  }
-};
+// Atualiza o carrossel ao redimensionar a janela
+window.addEventListener('resize', updateCarousel);

@@ -1,6 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+:root{
+  --primary-color: #40488f;
+  --secondary-color: #3f458f;
+  --tertiary-color: #00b0ff;
+  --quaternary-color: #414690;
+  --quinary-color: #333;
+  --senary-color: #f5f5f5;
+  --septenary-color: #f0f0f0;
+  --octonary-color: #ffffff;
+  --nonary-color: #000;
+  --denary-color: #6c6e8e;
+}
+
+
 * {
     list-style: none;
     margin: 0;
@@ -20,12 +34,12 @@
 
   .header {
     height: 80vh;
-    color: white;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
-    background: url('./assets/fundoteste3.jpg') no-repeat center center/cover;
+    background: url('./assets/fundoteste2024.jpg') no-repeat center center/cover;
 
   }
   
@@ -34,7 +48,7 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 20px 40px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     font-family: "Rubik", serif;
   }
   
@@ -117,12 +131,7 @@
     margin-bottom: 20px;
   }
   
-  .content h1 .highlight {
-    color: #3e73ee;
-    background-color: white;
-    padding: 1px 3px; 
-    border-radius: 4px; 
-  }
+ 
   
   .content p {
     font-size: 18px;
@@ -256,7 +265,7 @@
 }
 
 .services-text {
-    flex: 1; /* O texto ocupa o restante do espaço disponível */
+    flex: 1;
     max-width: 60%;
 }
 
@@ -269,14 +278,14 @@
 .services-text p {
     font-size: 1rem;
     color: #6c6e8e;
-    line-height: 1.6; /* Melhorar a legibilidade */
+    line-height: 1.6; 
     margin-bottom: 30px;
 }
 
 .contact-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #3b82f6;
+    background-color: var(--primary-color);
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
@@ -327,7 +336,7 @@
 .learn-more-button {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #3b82f6;
+    background-color: var(--primary-color);
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
@@ -336,118 +345,139 @@
   /* Fim Section Services */
 
 /* Inicio Empresas que trabalham conosco */
-.clientes-section {
+section.carousel-section {
+  padding: 70px 0;
+}
+
+.carousel-section h2{
   text-align: center;
-  padding: 50px 20px;
-  position: relative;
-  background: linear-gradient(90deg, #40488f, #c2e2f6);
-  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 50px;
+  color: #4e4e4e;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.clientes-section h2 {
-  font-size: 2.5rem;
-  color: #fff;
+.carousel-section p{
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  color: #40488f;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.clientes-section p {
-  font-size: 1rem;
-  margin: 15px 0;
-  color: #333;
-}
-
-.clientes-carousel {
-  display: flex;
-  gap: 30px;
+.carousel-container {
+  width: 50%;
+  margin: 0 auto;
   overflow: hidden;
-  padding: 50px;
-  scroll-behavior: smooth;
+  
 }
 
-.cliente-item {
-  flex: 0 0 auto;
-  width: 225px;
-  height: 169px;
+.carousel {
+  display: flex;
+  transition: transform 1.5s ease-in-out; /* Transição mais lenta (1.5s) */
+}
+
+.carousel-item {
+  box-sizing: border-box;
+  padding: 5px; /* Reduzi o padding para diminuir o espaço entre as imagens */
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  background: linear-gradient(to bottom, #ffffff, #ffffff);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.cliente-item:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+/* Estilo para as imagens */
+.carousel-item img {
+  width: 100%;
+  max-width: 200px; /* Tamanho fixo */
+  height: auto;
+  object-fit: contain; /* Mantém a proporção da imagem */
+  
+  background-color: #fff;
 }
-
-.cliente-item img {
-  max-width: 80%;
-  max-height: 80%;
-  filter: brightness(0.9);
-}
-
-.seta {
-  position: absolute;
-  top: 68%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(to bottom, #ffffff, #d4dff7);
-  border: 2px solid rgba(0, 0, 0, 0.2); /* Borda suave */
-  border-radius: 50%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 10;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.seta:hover {
-  transform: scale(1.1);
-  background: linear-gradient(to bottom, #ffffff, #b0c7f0); 
-}
-
-.seta svg {
-  width: 24px;
-  height: 24px;
-  fill: #000; 
-}
-
-.seta-esquerda {
-  left: 20px;
-}
-
-.seta-direita {
-  right: 20px;
-}
-
 /* Fim Empresas que trabalham conosco */
 
 
-/* Section Cloud-System */
+/* Inicio Footer */
+.footer {
+  background-color: #fff;
+  padding: 100px 10px;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #0077b5; 
+}
+
+.footer-social i {
+  display: inline-block;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
 
 
-/* Fim Section Cloud-System */
+/* Fim - Footer */
 
 
 
   /* Estilização do botão do WhatsApp */
-.whatsapp-button {
+  .whatsapp-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 60px;
-    height: 60px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .whatsapp-text {
+    margin-right: 10px; /* Espaço entre o texto e o botão */
+    padding: 10px 15px; /* Espaçamento interno */
+    background-color: #25d366; /* Fundo verde */
+    color: white; /* Cor do texto */
+    font-family: Arial, sans-serif; /* Fonte do texto */
+    font-size: 14px; /* Tamanho do texto */
+    border-radius: 5px; /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras no texto */
+  }
+  
+  .whatsapp-button {
+    width: 40px;
+    height: 40px;
     background-color: #25d366;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
     animation: pulse 2s infinite;
   }
   
@@ -461,19 +491,137 @@
   }
   
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 0 0 rgba(37, 211, 102, 0.5);
-    }
-    50% {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(37, 211, 102, 0.7);
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 0 rgba(37, 211, 102, 0.5);
-    }
+
+
+
+ 
+
+/* Seção principal */
+.partners-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #f8f9fc, #ffffff);
+}
+
+
+.partners-header h3 {
+  font-size: 24px;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.partners-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #000;
+}
+
+.partners-header p {
+  font-size: 20px;
+  color: #555;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+/* Logotipos */
+.partners-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.partner-logo {
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.partner-logo img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .partners-logos {
+    gap: 30px;
   }
+
+  .partner-logo {
+    width: 250px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-header h2 {
+    font-size: 36px;
+  }
+
+  .partners-header p {
+    font-size: 16px;
+  }
+
+  .partner-logo {
+    width: 220px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-header h2 {
+    font-size: 28px;
+  }
+
+  .partners-header p {
+    font-size: 14px;
+  }
+
+  .partner-logo {
+    width: 200px;
+    height: 140px;
+  }
+}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
