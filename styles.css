@@ -255,7 +255,7 @@
 }
 
 .services-image {
-    flex: 0 0 40%; /* A imagem ocupa 40% da largura */
+    flex: 0 0 40%; 
 }
 
 .services-image img {
@@ -354,7 +354,7 @@ section.carousel-section {
   font-size: 40px;
   font-weight: bold;
   line-height: 50px;
-  color: #4e4e4e;
+  color: black;
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
 }
@@ -377,27 +377,98 @@ section.carousel-section {
 
 .carousel {
   display: flex;
-  transition: transform 1.5s ease-in-out; /* Transição mais lenta (1.5s) */
+  transition: transform 1.5s ease-in-out; 
 }
 
 .carousel-item {
   box-sizing: border-box;
-  padding: 5px; /* Reduzi o padding para diminuir o espaço entre as imagens */
+  padding: 5px; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Estilo para as imagens */
+
 .carousel-item img {
   width: 100%;
-  max-width: 200px; /* Tamanho fixo */
+  max-width: 200px; 
   height: auto;
-  object-fit: contain; /* Mantém a proporção da imagem */
+  object-fit: contain; 
   
   background-color: #fff;
 }
 /* Fim Empresas que trabalham conosco */
+
+
+
+
+/* Section parceiros */
+.partners-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #f8f9fc, #ffffff);
+}
+
+
+.partners-header h3 {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.partners-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #000;
+}
+
+.partners-header p {
+  font-size: 20px;
+  color: #555;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+/* Logotipos */
+.partners-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+.partner-logo {
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+
+.partner-logo img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Fim Section parceiros */
 
 
 /* Inicio Footer */
@@ -459,14 +530,14 @@ section.carousel-section {
   }
   
   .whatsapp-text {
-    margin-right: 10px; /* Espaço entre o texto e o botão */
-    padding: 10px 15px; /* Espaçamento interno */
-    background-color: #25d366; /* Fundo verde */
-    color: white; /* Cor do texto */
-    font-family: Arial, sans-serif; /* Fonte do texto */
-    font-size: 14px; /* Tamanho do texto */
-    border-radius: 5px; /* Borda arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras no texto */
+    margin-right: 10px; 
+    padding: 10px 15px; 
+    background-color: #25d366;
+    color: white; 
+    font-family: Arial, sans-serif; 
+    font-size: 14px;
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   }
   
   .whatsapp-button {
@@ -494,116 +565,39 @@ section.carousel-section {
 
 
 
- 
-
-/* Seção principal */
-.partners-section {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(to bottom, #f8f9fc, #ffffff);
-}
-
-
-.partners-header h3 {
-  font-size: 24px;
-  color: #007BFF;
-  margin-bottom: 10px;
-}
-
-.partners-header h2 {
-  font-size: 48px;
-  font-weight: 700;
-  margin: 10px 0;
-  color: #000;
-}
-
-.partners-header p {
-  font-size: 20px;
-  color: #555;
-  margin: 20px auto;
-  max-width: 700px;
-}
-
-/* Logotipos */
-.partners-logos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.partner-logo {
-  background: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 2px solid #e0e0e0;
-  border-radius: 15px;
-  width: 300px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-
-.partner-logo img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
-
-.partner-logo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Responsividade */
-@media (max-width: 1024px) {
-  .partners-logos {
-    gap: 30px;
-  }
-
-  .partner-logo {
-    width: 250px;
-    height: 170px;
-  }
-}
-
-@media (max-width: 768px) {
-  .partners-header h2 {
-    font-size: 36px;
-  }
-
-  .partners-header p {
-    font-size: 16px;
-  }
-
-  .partner-logo {
-    width: 220px;
-    height: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .partners-header h2 {
-    font-size: 28px;
-  }
-
-  .partners-header p {
-    font-size: 14px;
-  }
-
-  .partner-logo {
-    width: 200px;
-    height: 140px;
-  }
-}
-
 
   
+  
+.video-section {
+  width: 100%;
+  height: 50vh; 
+  overflow: hidden; 
+  position: relative;
+}
+
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Vídeo responsivo */
+.responsive-video {
+  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .video-section {
+      height: 40vh; 
+  }
+}
+
 
 
 
