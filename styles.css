@@ -39,7 +39,7 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
-    background: url('./assets/fundoteste2024.jpg') no-repeat center center/cover;
+    
 
   }
   
@@ -568,36 +568,98 @@ section.carousel-section {
 
   
   
-.video-section {
-  width: 100%;
-  height: 50vh; 
-  overflow: hidden; 
-  position: relative;
-}
-
-
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Vídeo responsivo */
-.responsive-video {
-  object-fit: cover; 
-  width: 100%;
-  height: 100%;
-}
-
-
-@media (max-width: 768px) {
   .video-section {
-      height: 40vh; 
+    width: 100%;
+    height: 80vh; 
+    overflow: hidden; 
+    position: relative;
   }
-}
+  
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Vídeo responsivo */
+  .responsive-video {
+    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Conteúdo por cima do vídeo */
+  .video-content {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique acima do vídeo */
+    color: white;
+    text-align: center;
+    top: 50%; 
+    transform: translateY(-50%); /* Centraliza verticalmente */
+  }
 
+  .video-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: black;
+  }
+
+  .video-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: black;
+  }
+  
+ 
+  
+
+
+  @media (max-width: 1024px) {
+    .video-section {
+      height: 60vh; /* Aumenta a altura no tablet */
+      margin-top: -20px; /* Aproxima o vídeo da barra de navegação */
+    }
+  
+    .video-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .video-content p {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .video-section {
+      height: 70vh; /* Aumenta a altura no celular */
+      margin-top: -20px; /* Mais próximo da navegação */
+    }
+  
+    .video-content h1 {
+      font-size: 2rem;
+    }
+  
+    .video-content p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .video-section {
+      height: 75vh; /* Maior altura em telas pequenas */
+      margin-top: -20px; /* Mantém próximo à navegação */
+    }
+  
+    .video-content h1 {
+      font-size: 1.8rem;
+    }
+  
+    .video-content p {
+      font-size: 0.9rem;
+    }
+  }
 
 
 
