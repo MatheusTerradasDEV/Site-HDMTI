@@ -1,168 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atendimento</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #0033cc, #f5f5f5);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seções Alternadas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        .form-container {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            max-width: 600px;
-            width: 100%;
-        }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
 
-        .form-header {
-            text-align: center;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
 
-        .form-header h1 {
-            color: #0033cc;
-        }
+    header p {
+      font-size: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #555;
+    }
 
-        .form-header p {
-            margin: 10px 0;
-            color: #555;
-        }
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 20px;
+    }
 
-        .form-header .contact-info {
-            margin-top: 20px;
-            font-size: 14px;
-        }
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
 
-        .form-header .contact-info a {
-            color: #0033cc;
-            text-decoration: none;
-        }
+    .text, .image {
+      flex: 1 1 500px;
+      max-width: 500px;
+    }
 
-        form {
-            margin-top: 20px;
-        }
+    .text h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
 
-        form .form-group {
-            margin-bottom: 20px;
-        }
+    .text p {
+      font-size: 1rem;
+      color: #555;
+    }
 
-        form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
+    .image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
 
-        form input,
-        form select,
-        form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
 
-        form textarea {
-            resize: none;
-        }
-
-        form button {
-            background: #0033cc;
-            color: #fff;
-            border: none;
-            padding: 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        form button:hover {
-            background: #0026a3;
-        }
-
-        .bot-icon {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .bot-icon img {
-            width: 100px;
-        }
-    </style>
+      .section:nth-child(even) {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <div class="form-header">
-                <div class="bot-icon">
-                    <img src="bot-icon.png" alt="Bot Icon">
-                </div>
-                <h1>Estamos disponíveis para <strong>ATENDER VOCÊ!</strong></h1>
-                <p>Preencha o cadastro abaixo e tenha acesso aos nossos especialistas que vão guiar o rumo do seu projeto!</p>
-                <div class="contact-info">
-                    <p>
-                        WhatsApp: <a href="tel:+559131971474">(91) 3197-1474</a> <br>
-                        Email: <a href="mailto:comercial@vibetecnologia.com">comercial@vibetecnologia.com</a>
-                    </p>
-                </div>
-            </div>
-            <form>
-                <div class="form-group">
-                    <label for="nome">Nome*</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email corporativo*</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefone">Celular*</label>
-                    <input type="tel" id="telefone" name="telefone" required placeholder="+55">
-                </div>
-                <div class="form-group">
-                    <label for="cargo">Cargo</label>
-                    <select id="cargo" name="cargo">
-                        <option value="" selected>Selecione</option>
-                        <option value="gerente">Gerente</option>
-                        <option value="analista">Analista</option>
-                        <option value="outro">Outro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="empresa">Empresa*</label>
-                    <input type="text" id="empresa" name="empresa" required>
-                </div>
-                <div class="form-group">
-                    <label for="problema">Qual problema a sua empresa enfrenta?*</label>
-                    <select id="problema" name="problema">
-                        <option value="" selected>Selecione</option>
-                        <option value="infraestrutura">Infraestrutura</option>
-                        <option value="software">Software</option>
-                        <option value="outro">Outro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="detalhes">O que mais precisamos saber sobre o seu projeto?</label>
-                    <textarea id="detalhes" name="detalhes" rows="4"></textarea>
-                </div>
-                <button type="submit">Falar com o #TimeVibe</button>
-            </form>
-        </div>
+  <header>
+    <h1>Nosso time pode impulsionar a performance da sua empresa.</h1>
+    <p>
+      Com mais de 14 anos de experiência no mercado e fundamentados nos valores de ética, compromisso, transparência com o cliente e valorização do Ser Humano, somos uma empresa especializada em soluções personalizadas que atendem às reais necessidades do seu negócio. Atendemos clientes em todo o Brasil, oferecendo uma equipe com expertise nas melhores e mais adequadas ferramentas disponíveis no mercado para outsourcing, governança, segurança, sustentação e administração de ambientes tecnológicos corporativos.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="text">
+      <h2>Personalização Sob Medida</h2>
+      <p>
+        Crie um ambiente sob medida para as suas necessidades e acompanhe o ritmo de crescimento da sua empresa.
+      </p>
     </div>
+    <div class="image">
+      <img src="https://via.placeholder.com/500x300" alt="Imagem ilustrativa">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="image">
+      <img src="https://via.placeholder.com/500x300" alt="Imagem ilustrativa">
+    </div>
+    <div class="text">
+      <h2>Autonomia e Controle Total</h2>
+      <p>
+        Acesse um painel administrativo completo e assuma o controle da sua infraestrutura com facilidade.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="text">
+      <h2>Maior Desempenho</h2>
+      <p>
+        Tenha maior velocidade e desempenho com tecnologias otimizadas para o seu negócio.
+      </p>
+    </div>
+    <div class="image">
+      <img src="https://via.placeholder.com/500x300" alt="Imagem ilustrativa">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="image">
+      <img src="https://via.placeholder.com/500x300" alt="Imagem ilustrativa">
+    </div>
+    <div class="text">
+      <h2>Suporte Especializado</h2>
+      <p>
+        Contamos com uma equipe experiente para oferecer suporte e garantir que sua infraestrutura funcione sem problemas.
+      </p>
+    </div>
+  </section>
 </body>
 </html>
