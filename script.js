@@ -30,3 +30,17 @@ setInterval(nextSlide, 4000); // Intervalo mais lento (4s)
 
 // Atualiza o carrossel ao redimensionar a janela
 window.addEventListener('resize', updateCarousel);
+
+
+
+
+
+
+const menuToggle = document.getElementById('menuToggle');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    menuToggle.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('open');
+      menuIcon.classList.toggle('active');
+    });

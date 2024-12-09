@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HDMTI</title>
+ 
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="./resp/global.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
@@ -19,16 +20,32 @@
         <img src="./assets/logohdmti.webp" alt="">
       </div>
       <ul class="nav-links">
-        <li><a href="#">Serviços</a></li>
+        <li><a href="#servicos">Serviços</a></li>
         <li><a href="#">Quem somos</a></li>
-        <li><a href="#">Clientes</a></li>
-        <li><a href="#">Parceiros</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#parceiros">Parceiros</a></li>
       </ul>
       <div class="buttons">
         <button class="btn-contato">Contato</button>
         
       </div>
     </nav>
+
+    <div class="menu-container" id="menuToggle">
+      
+      <svg class="menu-icon" id="menuIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z" clip-rule="evenodd"/>
+      </svg>
+     
+      <div class="dropdown" id="dropdownMenu">
+        <a href="#servicos">Serviços</a>
+        <a href="#quemsomos">Quem somos</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#parceiros">Parceiros</a>
+      </div>
+    </div>
+
+
 
     <div class="video-section">
       <div class="video-container">
@@ -61,7 +78,7 @@
 
 
 
-  <section class="services-section">
+  <section class="services-section" id="servicos">
     <div class="container">
         <div class="services-content">
             <div class="services-image">
@@ -82,8 +99,7 @@
                     <i class="fa-duotone fa-solid fa-user-headset" style="--fa-primary-color: #000000; --fa-secondary-color: #000000;"></i>
                 </div>
                 <h3>Segurança da informação</h3>
-                <p>Nossa equipe cuidando da segurança dos seus dados com backup, firewall, DLP e serviços de disaster recovery.
-                </p>
+                <p>Nossa equipe protege seus dados com soluções de backup, firewall e DLP. Garantimos a recuperação rápida com serviços de disaster recovery</p>
                 <a href="#" class="learn-more-button">Saiba Mais</a>
             </div>
 
@@ -92,7 +108,7 @@
                     <img src="https://img.icons8.com/?size=100&id=dJkBb1Zs4u1m&format=png&color=128ce5" alt="Armazenamento em Nuvem">
                 </div>
                 <h3>Agentes de automação</h3>
-                <p>Automatização de fluxos de trabalho e agentes de IA</p>
+                <p>Otimizamos seus fluxos de trabalho com automação eficiente. Implementamos agentes de IA que impulsionam a produtividade.</p>
                 <a href="#" class="learn-more-button">Saiba Mais</a>
             </div>
 
@@ -101,7 +117,7 @@
                     <img src="https://img.icons8.com/?size=100&id=Y6y7hDGsd6Ku&format=png&color=128ce5" alt="Segurança da informação">
                 </div>
                 <h3>Service Desk e Governança</h3>
-                <p>Nossa equipe especializada monitorando, administrando e sustentando sua infraestrutura de TI.</p>
+                <p>Monitoramos, administramos e sustentamos sua infraestrutura de TI. Nossa equipe especializada garante a estabilidade e segurança.</p>
                 <a href="#" class="learn-more-button">Saiba Mais</a>
             </div>
 
@@ -110,7 +126,7 @@
                     <img src="https://img.icons8.com/?size=100&id=qidQnGXY3hoI&format=png&color=128ce5" alt="Cloud computing">
                 </div>
                 <h3>Serviços em nuvem</h3>
-                <p>Reduza custos, melhore a performance e a elasticidade dos dados.</p>
+                <p>Reduza custos com soluções escaláveis e flexíveis. Melhore a performance e a elasticidade dos seus dados. Aumente a sua eficiência operacional.</p>
                 <a href="#" class="learn-more-button">Saiba Mais</a>
             </div>
         </div>
@@ -120,7 +136,7 @@
 
   
       
-<section class="carousel-section">
+<section class="carousel-section" id="clientes">
 
   <h2 class="client-h2">Clientes que escolhem excelência</h2>
   <div class="carousel-container">
@@ -210,9 +226,9 @@
   </div>
 </section>
 
-<section class="partners-section">
+<section class="partners-section" id="parceiros">
   <div class="partners-header">
-    <h3>Nossas principais parcerias</h3>
+   
     <h2>Parceiros tecnológicos</h2>
     <p>
       Nossas equipes são treinadas e capacitadas para estar sempre à frente, colaborando com os maiores players de TI globais. Essa parceria estratégica garante que entregamos soluções inovadoras e alinhadas às melhores práticas do setor.
@@ -236,6 +252,39 @@
     </div>
     <div class="partner-logo">
       <img src="./assets/logo-safetica.png" alt="Salesforce">
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-form">
+      <h2>Deixe sua mensagem e <span>vamos entrar em contato com você!</span></h2>
+      <form action="https://formspree.io/f/xqakjowq" method="POST">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone</label>
+          <input type="tel" id="phone" name="phone" placeholder="+55" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Email</label>
+          <input type="email" id="email" name="email" placeholder="E-mail" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem aqui" required></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="contact-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.479170416302!2d-46.66056128502255!3d-23.55317938469386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b3b0b915a7%3A0x3e6b267e6be240b2!2sAv.%20Paulista%2C%20159%20-%20Bela%20Vista%2C%20São%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1632505957754!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -268,5 +317,6 @@
 
   
   <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

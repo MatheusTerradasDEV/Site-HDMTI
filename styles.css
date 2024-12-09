@@ -20,6 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
   
   body, html {
@@ -28,6 +29,14 @@
     font-family: "Poppins", sans-serif;
     height: 100%;
     background-color: #f5f5f5; 
+  }
+
+  .menu-icon{
+    display: none;
+  }
+
+  .dropdown{
+    display: none;
   }
   
   /* Início header */
@@ -233,6 +242,105 @@
     }
   }
   /* Fim header */
+
+
+  /* Video HEADER */
+
+  .video-section {
+    width: 100%;
+    height: 80vh; 
+    overflow: hidden; 
+    position: relative;
+  }
+  
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Vídeo responsivo */
+  .responsive-video {
+    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Conteúdo por cima do vídeo */
+  .video-content {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique acima do vídeo */
+    color: white;
+    text-align: center;
+    top: 50%; 
+    transform: translateY(-50%); /* Centraliza verticalmente */
+  }
+
+  .video-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: black;
+  }
+
+  .video-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: black;
+  }
+  
+ 
+  
+
+
+  @media (max-width: 1024px) {
+    .video-section {
+      height: 60vh; /* Aumenta a altura no tablet */
+      margin-top: -20px; /* Aproxima o vídeo da barra de navegação */
+    }
+  
+    .video-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .video-content p {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .video-section {
+      height: 70vh; 
+      margin-top: -20px; 
+    }
+  
+    .video-content h1 {
+      font-size: 2rem;
+    }
+  
+    .video-content p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .video-section {
+      height: 75vh; 
+      margin-top: -20px; 
+    }
+  
+    .video-content h1 {
+      font-size: 1.8rem;
+    }
+  
+    .video-content p {
+      font-size: 0.9rem;
+    }
+  }
+
+
+  /* Fim Video HEADER */
 
   /* Inicio Section Services */
 
@@ -471,6 +579,85 @@ section.carousel-section {
 /* Fim Section parceiros */
 
 
+/* Formulário e Localização */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20vh;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.contact-form,
+.contact-map {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2  {
+  color: var(--secondary-color);
+}
+
+.contact-form form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form form input,
+.contact-form form textarea,
+.contact-form form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-form form button {
+  background-color: var(--secondary-color);
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.contact-form form button:hover {
+  background-color: #3c5adf;
+}
+
+.contact-map iframe {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form,
+  .contact-map {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Fim Formulário e Localização */
+
+
+
 /* Inicio Footer */
 .footer {
   background-color: #fff;
@@ -566,110 +753,12 @@ section.carousel-section {
 
 
 
-  
-  
-  .video-section {
-    width: 100%;
-    height: 80vh; 
-    overflow: hidden; 
-    position: relative;
-  }
-  
-  .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Vídeo responsivo */
-  .responsive-video {
-    object-fit: cover; 
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* Conteúdo por cima do vídeo */
-  .video-content {
-    position: relative;
-    z-index: 2; /* Garante que o texto fique acima do vídeo */
-    color: white;
-    text-align: center;
-    top: 50%; 
-    transform: translateY(-50%); /* Centraliza verticalmente */
-  }
 
-  .video-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: black;
-  }
 
-  .video-content p {
-    font-size: 1rem;
-    margin-bottom: 30px;
-    color: black;
-  }
-  
+
+
+
  
-  
-
-
-  @media (max-width: 1024px) {
-    .video-section {
-      height: 60vh; /* Aumenta a altura no tablet */
-      margin-top: -20px; /* Aproxima o vídeo da barra de navegação */
-    }
-  
-    .video-content h1 {
-      font-size: 2.5rem;
-    }
-  
-    .video-content p {
-      font-size: 1.25rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .video-section {
-      height: 70vh; /* Aumenta a altura no celular */
-      margin-top: -20px; /* Mais próximo da navegação */
-    }
-  
-    .video-content h1 {
-      font-size: 2rem;
-    }
-  
-    .video-content p {
-      font-size: 1rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .video-section {
-      height: 75vh; /* Maior altura em telas pequenas */
-      margin-top: -20px; /* Mantém próximo à navegação */
-    }
-  
-    .video-content h1 {
-      font-size: 1.8rem;
-    }
-  
-    .video-content p {
-      font-size: 0.9rem;
-    }
-  }
-
-
-
-
-
-
-
-
-
-
 
 
 
