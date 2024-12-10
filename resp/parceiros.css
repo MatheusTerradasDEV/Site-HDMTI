@@ -2,6 +2,10 @@
     .partners-logos {
       grid-template-columns: repeat(2, 1fr); 
     }
+
+    .partners-section p{
+      font-size: 1rem;
+    }
   }
   
   @media (max-width: 480px) {
