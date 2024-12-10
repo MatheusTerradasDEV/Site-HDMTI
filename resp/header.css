@@ -32,6 +32,12 @@
     .content p {
       font-size: 14px;
     }
+
+    .video-content h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: black;
+    }
   }
   
   @media screen and (max-width: 480px) {
