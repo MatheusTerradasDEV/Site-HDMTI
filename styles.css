@@ -269,14 +269,13 @@
     height: 100%;
   }
   
-  /* Conteúdo por cima do vídeo */
   .video-content {
     position: relative;
-    z-index: 2; /* Garante que o texto fique acima do vídeo */
+    z-index: 2; 
     color: white;
     text-align: center;
     top: 50%; 
-    transform: translateY(-50%); /* Centraliza verticalmente */
+    transform: translateY(-50%); 
   }
 
   .video-content h1 {
@@ -297,8 +296,8 @@
 
   @media (max-width: 1024px) {
     .video-section {
-      height: 60vh; /* Aumenta a altura no tablet */
-      margin-top: -20px; /* Aproxima o vídeo da barra de navegação */
+      height: 60vh; 
+      margin-top: -20px; 
     }
   
     .video-content h1 {
@@ -768,29 +767,16 @@ section.carousel-section {
   .whatsapp-button:hover {
     transform: scale(1.1);
   }
-  
 
 
 
-
-
-
-
-
-
-
- 
-
-
-
-
-
+/* Barra de rolagem */
 body{
   height: 2000px;
 }
 
 ::-webkit-scrollbar{
-  width: 15px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track{
@@ -801,6 +787,8 @@ body{
   background: #40488f;
   
 }
+
+/* Fim barra de rolagem */
 
 
 
