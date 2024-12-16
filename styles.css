@@ -24,8 +24,7 @@
   }
   
   body, html {
-    scrollbar-color: #40488f #f0f0f0; 
-  scrollbar-width: auto; 
+   
     font-family: "Poppins", sans-serif;
     height: 100%;
     background-color: #f5f5f5; 
@@ -786,8 +785,22 @@ section.carousel-section {
 
 
 
+body{
+  height: 2000px;
+}
 
+::-webkit-scrollbar{
+  width: 15px;
+}
 
+::-webkit-scrollbar-track{
+  background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #40488f;
+  
+}
 
 
 
