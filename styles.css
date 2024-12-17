@@ -771,9 +771,6 @@ section.carousel-section {
 
 
 /* Barra de rolagem */
-body{
-  height: 2000px;
-}
 
 ::-webkit-scrollbar{
   width: 12px;
