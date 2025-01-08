@@ -14,7 +14,6 @@
   --denary-color: #6c6e8e;
 }
 
-
 * {
     list-style: none;
     margin: 0;
@@ -58,6 +57,7 @@
     padding: 20px 40px;
     background-color: rgb(255, 255, 255);
     font-family: "Rubik", serif;
+    position: relative;
   }
   
   .logo img {
@@ -110,23 +110,21 @@
   }
   
   .btn-contato {
-    width:182px ;
+    width: 182px;
     height: 45px;
     border: none;
-    border-radius: 25px;
     cursor: pointer;
     font-size: 13px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    
-  }
-  
-  .btn-contato {
-    background-color: #414690;
+    background-color: transparent;
+    color: #333;
     font-family: "Rubik", serif;
-    color: white;
+    transition: all 0.3s ease;
   }
 
+  .btn-contato:hover {
+    transform: translateY(-2px);
+    color: #666;
+  }
   
   .content {
     text-align: center;
@@ -142,6 +140,7 @@
   
  
   
+
   .content p {
     font-size: 18px;
     margin-bottom: 30px;
@@ -291,8 +290,6 @@
   }
   
  
-  
-
 
   @media (max-width: 1024px) {
     .video-section {
@@ -342,6 +339,7 @@
 
   /* Fim Video HEADER */
 
+
   /* Inicio Section Services */
 
   .services-section {
@@ -353,7 +351,6 @@
     max-width: 1200px;
     margin: 0 auto;
 }
-
 
 .services-content {
     display: flex;
@@ -384,7 +381,6 @@
     line-height: 1.6;
 }
 
-
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
@@ -407,7 +403,6 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-
 .service-icon img {
     width: 80px;
     height: 80px;
@@ -426,7 +421,6 @@
     line-height: 1.5;
     margin-bottom: 20px;
 }
-
 
 .learn-more-button {
     display: none;
@@ -450,7 +444,6 @@
     opacity: 1;
 }
 
-
 .service-card::before {
     content: '';
     position: absolute;
@@ -469,6 +462,7 @@
     opacity: 1;
 }
   /* Fim Section Services */
+
 
 /* Inicio Empresas que trabalham conosco */
 section.carousel-section {
@@ -514,7 +508,6 @@ section.carousel-section {
   align-items: center;
 }
 
-
 .carousel-item img {
   width: 100%;
   max-width: 200px; 
@@ -524,10 +517,7 @@ section.carousel-section {
   background-color: #fff;
 }
 
-
 /* Fim Empresas que trabalham conosco */
-
-
 
 
 /* Section parceiros */
@@ -538,7 +528,6 @@ section.carousel-section {
   padding: 50px 20px;
   background: linear-gradient(to bottom, #f8f9fc, #ffffff);
 }
-
 
 .partners-header h3 {
   font-size: 24px;
@@ -582,8 +571,6 @@ section.carousel-section {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
-
 .partner-logo img {
   max-width: 90%;
   max-height: 90%;
@@ -594,7 +581,6 @@ section.carousel-section {
   transform: scale(1.05);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
-
 
 /* Fim Section parceiros */
 
@@ -677,7 +663,6 @@ section.carousel-section {
 /* Fim Formulário e Localização */
 
 
-
 /* Inicio Footer */
 .footer {
   background-color: #fff;
@@ -721,54 +706,76 @@ section.carousel-section {
   color: #555;
 }
 
-
 /* Fim - Footer */
 
 
+/* Estilização do botão do WhatsApp */
+.whatsapp-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
 
-  /* Estilização do botão do WhatsApp */
-  .whatsapp-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+.whatsapp-text {
+  margin-right: 10px; 
+  padding: 10px 15px; 
+  background-color: #25d366;
+  color: white; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px;
+  border-radius: 5px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.whatsapp-button {
+  width: 40px;
+  height: 40px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-button img {
+  width: 35px;
+  height: 35px;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-links.active {
     display: flex;
-    align-items: center;
-    z-index: 1000;
   }
   
-  .whatsapp-text {
-    margin-right: 10px; 
-    padding: 10px 15px; 
-    background-color: #25d366;
-    color: white; 
-    font-family: Arial, sans-serif; 
-    font-size: 14px;
-    border-radius: 5px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  .buttons {
+    display: none;
   }
   
-  .whatsapp-button {
-    width: 40px;
-    height: 40px;
-    background-color: #25d366;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: pulse 2s infinite;
+  .navbar {
+    padding: 20px 20px;
   }
   
-  .whatsapp-button img {
-    width: 35px;
-    height: 35px;
+  .logo {
+    margin-left: -15px;
   }
   
-  .whatsapp-button:hover {
-    transform: scale(1.1);
+  .logo img {
+    width: 180px;
   }
-
-
+}
 
 /* Barra de rolagem */
 
@@ -786,7 +793,3 @@ section.carousel-section {
 }
 
 /* Fim barra de rolagem */
-
-
-
-  
